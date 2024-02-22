@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/crud.css">
+    <title>CRUD operation </title>
+   
+</head>
+<body>
+    <h1>Data Entry Form</h1>
+    
+ </div>  
+ <div class="main" id="ProductForm">
+    Name:<input type="text" id="name" placeholder="Name">
+    <span id="nameError" style="color: red; display: none;">Please enter your name</span>
+    <br>
+    Email:<input type="text" id="email" placeholder="Enter your email">
+    <span id="emailError" style="color: red; display: none;">Please enter a valid email</span>
+    <br>
+    ID:<input type="text" id="id" placeholder="ID">
+    <span id="idError" style="color: red; display: none;">Please enter your ID</span>
+    <br>
+    <form onsubmit="return validateForm();">
+        <input type="submit" value="Submit" class="submit-button">
+        <button type="button" onclick="clearForm()">Clear</button>
+        <input type="text" id="searchInput" onkeyup="searchData()" placeholder="Search for names..">
+    </form>
+</div>
+<table id="dataTable">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>ID</th>
+        <th>Action</th>
+    </tr>
+</table>
+ 
+
+
+<script src="/static/crud.mjs"></script>
+<script src="/static/app.mjs"></script>
+</body>
+</html>
