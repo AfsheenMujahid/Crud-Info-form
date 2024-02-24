@@ -41,24 +41,10 @@ server.listen(2000, () => {
 
 connectToMongoDB();
 
-//client.connect((err) => {
-//if (err) {
-//  console.error("Error connecting to MongoDB:", err);
-//  console.log("MongoDB not connected");
-// } else {
-//    console.log("Connection to MongoDB successful");
-//   console.log("MongoDB connected");
-// }
-//});
-
 const app = express();
 app.use(express.json());
 app.use(cors(["http://localhost:2000",]));
 app.use(morgan('combined'));
-
-//app.get("/", (req, res) => {
-// res.send("hello world!");
-//});
 
 app.get("/products", async (req, res) => {
 
@@ -76,7 +62,7 @@ app.get("/products", async (req, res) => {
   }
 });
 
-//  https://baseurl.com/product/1231
+
 app.get("/product/:id", async (req, res) => {
 
   if (!ObjectId.isValid(req.params.id)) {
@@ -220,7 +206,7 @@ app.use((req, res) => {
   res.status(404).send("not found");
 })
 
-const port = process.env.PORT || 2000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
