@@ -21,8 +21,9 @@ h1 {
     width: 30%;
     margin: 20px auto;
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    color: rgb(56, 0, 0);
     padding: 20px;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
