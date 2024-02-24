@@ -3,22 +3,27 @@ document.querySelector("#ProductForm")
         event.preventDefault();
 
         const name = document.querySelector('#name').value;
-        const brand = document.querySelector('#email').value;
- 
- 
+        const brand = document.querySelector('#brand').value;
+        const model = document.querySelector('#model').value;
+        const price = document.querySelector('#price').value;
+        const description = document.querySelector('#description').value;
+
         try {
-            const resp = await axios.post(`http://localhost:3000/product`, {
+            const resp = await axios.post(`http://localhost:2000/product`, {
                 name: name,
-                email,
-                id
+                brand,
+                model,
+                price,
+                description
             });
             console.log("resp: ", resp.data);
             getAllProducts();
 
             document.querySelector('#name').value = '';
-            document.querySelector('#email').value = '';
-            document.querySelector('#id').value = '';
-           
+            document.querySelector('#brand').value = '';
+            document.querySelector('#model').value = '';
+            document.querySelector('#price').value = '';
+            document.querySelector('#description').value = '';
 
         } catch (e) {
             console.error("Error getting products");
@@ -30,7 +35,7 @@ document.querySelector("#ProductForm")
 const getAllProducts = async () => {
     try {
 
-        const resp = await axios.get("http://localhost:3000/products");
+        const resp = await axios.get("http://localhost:2000/products");
         console.log("resp: ", resp.data.data);
 
         let productsDiv = document.querySelector("#products")
@@ -39,11 +44,11 @@ const getAllProducts = async () => {
         resp.data.data.map(eachProduct => {
             productsDiv.innerHTML += `<div class="card">
                     <h2>Name: ${eachProduct.name}</h2>
-                    <p><strong>Email:</strong> ${eachProduct.email}</p>
-                    <p><strong>Id:</strong> ${eachProduct.id}</p>
+                    <p><strong>Brand:</strong> ${eachProduct.brand}</p>
+                    <p><strong>Model:</strong> ${eachProduct.model}</p>
                     <p><strong>Price:</strong> ${eachProduct.price} $</p>
-                     <p><strong>Pro.id:</strong> ${eachProduct._id}</p>
-                   <p><strong>Description:</strong> ${eachProduct.description}</p>
+                    <p><strong>Pro.id:</strong> ${eachProduct._id}</p>
+                    <p><strong>Description:</strong> ${eachProduct.description}</p>
                     <br>
                     <button class="icon-button delete-button"type="button"
                     onclick="deleteProduct('${eachProduct._id}') ">
@@ -126,7 +131,7 @@ window.cancelEdit = (productId) => {
 window.deleteProduct = async (id) => {
     try {
         console.log("id: ", id);
-        const resp = await axios.delete(`http://localhost:3000/product/${id}`);
+        const resp = await axios.delete(`http://localhost:2000/product/${id}`);
         console.log("resp: ", resp.data);
         getAllProducts();
 
