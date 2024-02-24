@@ -24,6 +24,20 @@ const connectToMongoDB = async () => {
     console.log("MongoDB not connected");
   }
 };
+const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((req, res) => {
+  fs.readFile('yourfile.html', (err, data) => {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+  });
+});
+
+server.listen(2000, () => {
+  console.log('Server is running on http://localhost:2000');
+});
 
 connectToMongoDB();
 
