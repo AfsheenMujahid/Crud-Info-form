@@ -1,4 +1,12 @@
+ 
 {
+  "name": "my-website",
+  "version": "1.0.0",
+  "description": "My website description",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "package.json": "^20.11.1"
   }
