@@ -15,11 +15,17 @@
     Name:<input type="text" id="name" placeholder="Name">
     <span id="nameError" style="color: red; display: none;">Please enter your name</span>
     <br>
-    Email:<input type="text" id="email" placeholder="Enter your email">
-    <span id="emailError" style="color: red; display: none;">Please enter a valid email</span>
+    Brand:<input type="text" id="brand" placeholder="Enter your email">
+    <span id="emailError" style="color: red; display: none;">Please enter your brand</span>
     <br>
-    ID:<input type="text" id="id" placeholder="ID">
-    <span id="idError" style="color: red; display: none;">Please enter your ID</span>
+    Model:<input type="text" id="model" placeholder="enter model here">
+    <span id="idError" style="color: red; display: none;">Please enter your model</span>
+    <br>
+    Price:<input type="number" id="price" placeholder="enter brand here">
+    <span id="priceError" style="color: red; display: none;">Please enter your price</span>
+    <br>
+    Description:<input type="text" id="description" placeholder="description">
+    <span id="descriptionError" style="color: red; display: none;">Please enter your description</span>
     <br>
     <form onsubmit="return validateForm();">
         <input type="submit" value="Submit" class="submit-button">
@@ -27,18 +33,20 @@
         <input type="text" id="searchInput" onkeyup="searchData()" placeholder="Search for names..">
     </form>
 </div>
-<table id="dataTable">
+<!-- <table id="dataTable">
     <tr>
         <th>Name</th>
-        <th>Email</th>
-        <th>ID</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Description</th>
         <th>Action</th>
     </tr>
-</table>
+</table> -->
+
  
 
 
 <script src="./static/crud.mjs"></script>
-<script src="./static/app.mjs"></script>
-</body>
+ </body>
 </html>
