@@ -36,14 +36,14 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(2000, () => {
-  console.log('Server is running on http://localhost:2000');
+  console.log('Server is running on http://localhost:3000');
 });
 
 connectToMongoDB();
 
 const app = express();
 app.use(express.json());
-app.use(cors(["http://localhost:2000",]));
+app.use(cors(["http://localhost:3000",]));
 app.use(morgan('combined'));
 
 app.get("/products", async (req, res) => {
