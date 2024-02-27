@@ -1,6 +1,6 @@
  
-{
- 
+
+ {
   "main": "server.mjs",
   "scripts": {
     "start": "node server.mjs"
@@ -11,5 +11,5 @@
   "engines": {
     "node": "20.11.1"
   }
-}
 
+ }
